@@ -1,4 +1,7 @@
-
+#ifndef DDEBUG
+#define DDEBUG 0
+#endif
+#include "ddebug.h"
 
 #include <ngx_config.h>
 #include <ngx_core.h>
@@ -94,8 +97,8 @@ ngx_http_recaptcha_form_variable(ngx_http_request_t *r,
     }
 
     //    ngx_log_debug3(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
-    ngx_log_error(NGX_LOG_INFO, r->connection->log, 0,
-                   "request_body: \"%*s\", param name = \"%V\"",
+    //    ngx_log_error(NGX_LOG_INFO, r->connection->log, 0,
+    dd("request_body: \"%*s\", param name = \"%V\"",
                    vv->len, vv->data, name);
 
     head = ngx_strnstr((u_char *)vv->data, (char *)name->data, (size_t)vv->len);
