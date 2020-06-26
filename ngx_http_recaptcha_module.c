@@ -176,6 +176,7 @@ ngx_http_add_form_variable(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 static void *
 ngx_http_recaptcha_create_conf(ngx_conf_t *cf)
 {
+  dd("recaptcha create conf");
     ngx_http_recaptcha_conf_t  *conf;
 
     conf = ngx_pcalloc(cf->pool, sizeof(ngx_http_recaptcha_conf_t));
@@ -198,6 +199,7 @@ ngx_http_recaptcha_create_conf(ngx_conf_t *cf)
 static char *
 ngx_http_recaptcha_merge_conf(ngx_conf_t *cf, void *parent, void *child)
 {
+    dd("recaptcha merge conf");
     ngx_str_t                  body = ngx_string("request_body");
     ngx_http_recaptcha_conf_t *conf = child;
 
