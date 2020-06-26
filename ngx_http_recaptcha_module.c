@@ -93,7 +93,8 @@ ngx_http_recaptcha_form_variable(ngx_http_request_t *r,
         goto not_found;
     }
 
-    ngx_log_debug3(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
+    //    ngx_log_debug3(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
+    ngx_log_error(NGX_LOG_INFO, r->connection->log, 0,
                    "request_body: \"%*s\", param name = \"%V\"",
                    vv->len, vv->data, name);
 
